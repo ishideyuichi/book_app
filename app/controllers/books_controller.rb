@@ -26,7 +26,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      redirect_to @book, notice: t('Book was successfully created').to_s
+      redirect_to @book, notice: t('Book was successfully created')
     else
       frender :new
     end
