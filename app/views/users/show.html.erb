@@ -1,0 +1,19 @@
+<h1>Profile</h1>
+<div class='contents'>
+  <h2><%= t('activerecord.attributes.user.name')%></h2>
+  <%= @user.name %>
+</div>
+<div class='contents'>
+  <h2><%= t('activerecord.attributes.user.postcode')%></h2>
+  <%= @user.postcode %>
+</div>
+<div class='contents'>
+  <h2><%= t('activerecord.attributes.user.address')%></h2>
+  <%= @user.address %>
+</div>
+<div class='contents'>
+  <h2><%= t('activerecord.attributes.user.introduction')%></h2>
+  <%= @user.introduction %>
+</div>
+<%= link_to t('devise.edit'), edit_user_registration_path, class: 'navbar-link' %> |
+<%= link_to t('devise.shared.links.back'), :back %>
