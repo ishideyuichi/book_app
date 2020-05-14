@@ -1,7 +1,13 @@
-<h1>Profile</h1>
+<h1><%= t('profile')%></h1>
 <div class='contents'>
   <h2><%= t('activerecord.attributes.user.name')%></h2>
   <%= @user.name %>
+</div>
+<div class='contents'>
+  <h2><%= t('activerecord.attributes.user.avatar')%></h2>
+  <div class='avatar'>
+    <%= image_tag @user.avatar if @user.avatar.attached?%>
+  </div>
 </div>
 <div class='contents'>
   <h2><%= t('activerecord.attributes.user.postcode')%></h2>
