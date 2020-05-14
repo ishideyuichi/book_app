@@ -5,14 +5,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    #@books = current_user.books.page(params[:page]).per(NUMBER_OF_ITEMS)
-    @books = Book.where(user_id: following_to_a).page(params[:page]).per(NUMBER_OF_ITEMS)
-  end
-
-  def following_to_a
-    following = []
-    Relationship.where(follower_id: current_user.id).find_each {|t| following.push(t.followed_id)}
-    following.push(current_user.id)
+    @books = Book.where(user_id: fetch_id).page(params[:page]).per(NUMBER_OF_ITEMS)
   end
 
   # GET /books/1
@@ -57,13 +50,18 @@ class BooksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = current_user.books.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def book_params
-      params.require(:book).permit(:title, :memo, :author, :picture)
-    end
+  def fetch_id
+    current_user.following.map(&:id).push(current_user.id)
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_book
+    @book = current_user.books.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def book_params
+    params.require(:book).permit(:title, :memo, :author, :picture)
+  end
 end
