@@ -1,0 +1,13 @@
+<%= t('users') %>
+<table>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td class='index_avatar'><%= image_tag user.avatar if user.avatar.attached?%></td>
+      <td><%= link_to user.name, user %></td>
+      <td><%= user.introduction %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @users %>

@@ -7,6 +7,7 @@
       <th><%= t 'memo' %></th>
       <th><%= t 'author' %></th>
       <th><%= t 'picture' %></th>
+      <th><%= t 'user' %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +19,12 @@
       <td><%= book.memo %></td>
       <td><%= book.author %></td>
       <td><%= book.picture %></td>
+      <td><%= book.user.name %></td>
       <td><%= link_to "#{t 'show'}", book %></td>
+      <% if book.user == current_user %>
       <td><%= link_to "#{t 'edit'}", edit_book_path(book) %></td>
       <td><%= link_to "#{t 'destroy'}", book, method: :delete, data: { confirm: "#{t 'Are you sure?' }" } %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
