@@ -3,13 +3,11 @@ class BooksController < ApplicationController
   NUMBER_OF_ITEMS = 5
 
   # GET /books
-  # GET /books.json
   def index
     @books = Book.where(user_id: fetch_id).page(params[:page]).per(NUMBER_OF_ITEMS)
   end
 
   # GET /books/1
-  # GET /books/1.json
   def show
     @book = Book.find(params[:id])
   end
