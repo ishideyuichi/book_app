@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @report.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @report.body %>
+</p>
+
+<%= link_to t('edit'), edit_report_path(@report) %> |
+<%= link_to t('back'), reports_path %>

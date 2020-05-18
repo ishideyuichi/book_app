@@ -1,9 +1,12 @@
 ja:
+  reports: 日報一覧
+  New Report: 新しい日報を追加
   users: ユーザー一覧
   profile: プロフィール
   books: 書籍一覧
   title: タイトル
   memo: メモ
+  body: 本文
   author: 著者
   picture: 画像
   user: 投稿者
@@ -17,6 +20,9 @@ ja:
   Book was successfully created: 本の作成に成功しました。
   Book was successfully updated: 本の更新に成功しました。
   Book was successfully destroyed: 本の削除に成功しました。
+  Report was successfully created: 日報の作成に成功しました。
+  Report was successfully updated: 日報の更新に成功しました。
+  Report was successfully destroyed: 日報の削除に成功しました。
   helpers:
     submit:
       create: 新規登録
@@ -28,3 +34,6 @@ ja:
         memo: メモ
         author: 著者
         picture: 写真
+      report:
+        title: タイトル
+        body: 本文

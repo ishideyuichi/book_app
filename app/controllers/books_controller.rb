@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to @book, notice: t('Book was successfully created')
     else
-      frender :new
+      render :new
     end
   end
 
@@ -44,7 +44,7 @@ class BooksController < ApplicationController
   # DELETE /books/1
   def destroy
     @book.destroy
-    redirect_to books_url, notice: t('Book was successfully destroyed').to_s
+    redirect_to books_url, notice: t('Book was successfully destroyed')
   end
 
   private
