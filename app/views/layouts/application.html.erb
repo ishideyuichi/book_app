@@ -15,7 +15,8 @@
   <p class="navbar-text pull-right">
     <% if user_signed_in? %>
     <strong><%= current_user.email %></strong> <%= t('devise.logged_in_as') %>
-    <%= link_to t('devise.profile'), users_show_path, class: 'navbar-link' %> |
+    <%= link_to t('devise.profile'), current_user, class: 'navbar-link' %> |
+    <%= link_to t('users'), users_path, class: 'navbar-link' %> |
     <%= link_to t('devise.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
     <% else %>
     <%= link_to t('devise.sign_up'), new_user_registration_path, class: 'navbar-link'  %> |

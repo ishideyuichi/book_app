@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'users/show'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
     passwords: 'users/passwords',
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
+  resources :users do
+    resources :following, only: :index
+    resources :followers, only: :index
+  end
   resources :books
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, :only => [:show]
   root to: 'books#index'
+  resources :relationships, only: [:create, :destroy]
 end

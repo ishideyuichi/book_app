@@ -1,4 +1,33 @@
 <h1><%= t('profile')%></h1>
+
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= user_following_index_path(@user) %>">
+    <%= @user.following.count %>
+    following
+  </a>
+  <a href="<%= user_followers_path(@user) %>">
+    <%= @user.followers.count %>
+    followers
+  </a>
+</div>
+
+<% unless current_user == @user %>
+<div id="follow_form">
+  <% if current_user.following?(@user) %>
+  <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),
+              html: { method: :delete }) do |f| %>
+  <%= f.submit "Unfollow", class: "btn" %>
+  <% end %>
+  <% else %>
+  <%= form_for(current_user.active_relationships.build) do |f| %>
+  <div><%= hidden_field_tag :followed_id, @user.id %></div>
+  <%= f.submit "Follow", class: "btn btn-primary" %>
+  <% end %>
+  <% end %>
+</div>
+<% end %>
+
 <div class='contents'>
   <h2><%= t('activerecord.attributes.user.name')%></h2>
   <%= @user.name %>
@@ -21,5 +50,7 @@
   <h2><%= t('activerecord.attributes.user.introduction')%></h2>
   <%= @user.introduction %>
 </div>
-<%= link_to t('devise.edit'), edit_user_registration_path, class: 'navbar-link' %> |
+<% if current_user == @user%>
+<%= link_to t('devise.edit'), edit_user_registration_path, class: 'navbar-link' %>
+<% end %>
 <%= link_to t('devise.shared.links.back'), :back %>
