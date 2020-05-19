@@ -26,7 +26,7 @@
 
 <%= render 'comments/index', comment: @comment %>
 
-<%= render 'comments/form', comment: @comment, button_name: "コメントする" %>
+<%= render 'comments/form', comment: @comment, button_name: t('post comment')%>
 
 <% if @book.user == current_user %>
 <%= link_to "#{t 'edit'}", edit_book_path(@book) %> |

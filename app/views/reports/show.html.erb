@@ -12,5 +12,7 @@
 <%= render 'comments/index', comment: @comment %>
 <%= render 'comments/form', comment: @comment, button_name: "コメントする" %>
 
+<% if @report.user == current_user %>
 <%= link_to t('edit'), edit_report_path(@report) %> |
+<% end %>
 <%= link_to t('back'), reports_path %>

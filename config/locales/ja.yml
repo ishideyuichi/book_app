@@ -1,6 +1,9 @@
 ja:
   comments: コメント一覧
   comment: コメント
+  post comment: コメントする
+  Editing Comment: コメントを編集
+  save: 保存する
   comment_user: 投稿者
   created_at: 投稿日時
   reports: 日報一覧
