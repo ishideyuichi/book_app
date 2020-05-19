@@ -10,6 +10,8 @@ class BooksController < ApplicationController
   # GET /books/1
   def show
     @book = Book.find(params[:id])
+    @comment = Comment.new
+    @comments = Book.find(params[:id]).comments
   end
 
   # GET /books/new
@@ -56,6 +58,10 @@ class BooksController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_book
     @book = current_user.books.find(params[:id])
+  end
+
+  def set_comment
+    @comment = Books.find(params[id]).comments
   end
 
   # Only allow a list of trusted parameters through.

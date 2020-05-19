@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :books
   has_many :reports
+  has_many :comments
 
   def self.create_unique_string
     SecureRandom.uuid

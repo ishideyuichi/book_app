@@ -8,5 +8,9 @@
   <%= @report.body %>
 </p>
 
+<% @commentable = @report %>
+<%= render 'comments/index', comment: @comment %>
+<%= render 'comments/form', comment: @comment, button_name: "コメントする" %>
+
 <%= link_to t('edit'), edit_report_path(@report) %> |
 <%= link_to t('back'), reports_path %>

@@ -22,6 +22,11 @@
   <strong><%= t 'user'%>:</strong>
   <%= @book.user.name %>
 </p>
+<% @commentable = @book %>
+
+<%= render 'comments/index', comment: @comment %>
+
+<%= render 'comments/form', comment: @comment, button_name: "コメントする" %>
 
 <% if @book.user == current_user %>
 <%= link_to "#{t 'edit'}", edit_book_path(@book) %> |

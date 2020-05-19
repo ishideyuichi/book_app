@@ -1,6 +1,11 @@
 ja:
+  comments: コメント一覧
+  comment: コメント
+  comment_user: 投稿者
+  created_at: 投稿日時
   reports: 日報一覧
   New Report: 新しい日報を追加
+  Editing Report: 日報を編集
   users: ユーザー一覧
   profile: プロフィール
   books: 書籍一覧
@@ -23,6 +28,9 @@ ja:
   Report was successfully created: 日報の作成に成功しました。
   Report was successfully updated: 日報の更新に成功しました。
   Report was successfully destroyed: 日報の削除に成功しました。
+  Comment was successfully created: コメントの作成に成功しました。
+  Comment was successfully updated: コメントの更新に成功しました。
+  Comment was successfully destroyed: コメントの削除に成功しました。
   helpers:
     submit:
       create: 新規登録
@@ -37,3 +45,8 @@ ja:
       report:
         title: タイトル
         body: 本文
+      comment:
+        body: コメント
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"
