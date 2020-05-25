@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @comments.each do |comment| %>
+    <% @commentable.comments.each do |comment| %>
     <tr>
       <td> <%= comment.body %></td>
       <td> <%= comment.user.name %></td>
