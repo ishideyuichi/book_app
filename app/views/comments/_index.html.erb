@@ -9,18 +9,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @commentable.comments.each do |comment| %>
-    <tr>
-      <td> <%= comment.body %></td>
-      <td> <%= comment.user.name %></td>
-      <td> <%= l comment.created_at %></td>
-      <% if comment.user == current_user %>
-      <td><%= link_to t('edit'), [:edit, @commentable,comment] %></td>
-      <td>
-        <%= link_to t('destroy'), [@commentable,comment], method: :delete, data: { confirm: "#{t 'Are you sure?' }" } %>
-      </td>
-      <% end %>
-    </tr>
+    <% commentable.comments.each do |comment| %>
+      <tr>
+        <td> <%= comment.body %></td>
+        <td> <%= comment.user.name %></td>
+        <td> <%= l comment.created_at %></td>
+        <% if comment.user == current_user %>
+          <td><%= link_to t('edit'), [:edit, commentable,comment] %></td>
+          <td>
+            <%= link_to t('destroy'), [commentable,comment], method: :delete, data: { confirm: "#{t 'Are you sure?' }" } %>
+          </td>
+        <% end %>
+      </tr>
     <% end %>
   </tbody>
 </table>

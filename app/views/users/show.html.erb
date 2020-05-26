@@ -10,6 +10,7 @@
     <%= @user.followers.count %>
     followers
   </a>
+  <%= link_to t('folloing_books'), following_books_index_path %>
 </div>
 
 <% unless current_user == @user %>

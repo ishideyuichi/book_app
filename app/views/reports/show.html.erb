@@ -8,8 +8,7 @@
   <%= @report.body %>
 </p>
 
-<% @commentable = @report %>
-<%= render 'comments/index'%>
+<%= render 'comments/index', commentable: @report %>
 <%= render 'comments/form', comment: @report.comments.new, button_name: "コメントする" %>
 
 <% if @report.user == current_user %>

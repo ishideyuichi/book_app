@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'following_books/index'
   resources :reports do
     resources :comments
   end

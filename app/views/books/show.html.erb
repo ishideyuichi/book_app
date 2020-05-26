@@ -22,9 +22,8 @@
   <strong><%= t 'user'%>:</strong>
   <%= @book.user.name %>
 </p>
-<% @commentable = @book %>
 
-<%= render 'comments/index'%>
+<%= render 'comments/index', commentable: @book %>
 
 <%= render 'comments/form', comment: @book.comments.new, button_name: t('post comment')%>
 

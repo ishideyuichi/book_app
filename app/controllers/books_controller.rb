@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.where(user_id: fetch_id).page(params[:page]).per(NUMBER_OF_ITEMS)
+    @books = Book.all.page(params[:page]).per(NUMBER_OF_ITEMS)
   end
 
   # GET /books/1
@@ -48,10 +48,6 @@ class BooksController < ApplicationController
   end
 
   private
-
-  def fetch_id
-    current_user.following.map(&:id).push(current_user.id)
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_book
