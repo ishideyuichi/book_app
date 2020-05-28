@@ -1,9 +1,21 @@
 ja:
+  folloing_books: フォローユーザーの書籍一覧
+  comments: コメント一覧
+  comment: コメント
+  post comment: コメントする
+  Editing Comment: コメントを編集
+  save: 保存する
+  comment_user: 投稿者
+  created_at: 投稿日時
+  reports: 日報一覧
+  New Report: 新しい日報を追加
+  Editing Report: 日報を編集
   users: ユーザー一覧
   profile: プロフィール
   books: 書籍一覧
   title: タイトル
   memo: メモ
+  body: 本文
   author: 著者
   picture: 画像
   user: 投稿者
@@ -17,6 +29,12 @@ ja:
   Book was successfully created: 本の作成に成功しました。
   Book was successfully updated: 本の更新に成功しました。
   Book was successfully destroyed: 本の削除に成功しました。
+  Report was successfully created: 日報の作成に成功しました。
+  Report was successfully updated: 日報の更新に成功しました。
+  Report was successfully destroyed: 日報の削除に成功しました。
+  Comment was successfully created: コメントの作成に成功しました。
+  Comment was successfully updated: コメントの更新に成功しました。
+  Comment was successfully destroyed: コメントの削除に成功しました。
   helpers:
     submit:
       create: 新規登録
@@ -28,3 +46,11 @@ ja:
         memo: メモ
         author: 著者
         picture: 写真
+      report:
+        title: タイトル
+        body: 本文
+      comment:
+        body: コメント
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"

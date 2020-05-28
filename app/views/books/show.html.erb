@@ -23,6 +23,10 @@
   <%= @book.user.name %>
 </p>
 
+<%= render 'comments/index', commentable: @book %>
+
+<%= render 'comments/form', comment: @book.comments.new, button_name: t('post comment')%>
+
 <% if @book.user == current_user %>
 <%= link_to "#{t 'edit'}", edit_book_path(@book) %> |
 <% end %>

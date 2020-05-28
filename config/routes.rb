@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'following_books/index'
+  resources :reports do
+    resources :comments
+  end
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -9,7 +13,9 @@ Rails.application.routes.draw do
     resources :following, only: :index
     resources :followers, only: :index
   end
-  resources :books
+  resources :books do
+    resources :comments
+  end
   root to: 'books#index'
   resources :relationships, only: [:create, :destroy]
 end

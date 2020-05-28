@@ -4,7 +4,7 @@ class BooksController < ApplicationController
 
   # GET /books
   def index
-    @books = Book.where(user_id: fetch_id).page(params[:page]).per(NUMBER_OF_ITEMS)
+    @books = Book.all.page(params[:page]).per(NUMBER_OF_ITEMS)
   end
 
   # GET /books/1
@@ -28,7 +28,7 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to @book, notice: t('Book was successfully created')
     else
-      frender :new
+      render :new
     end
   end
 
@@ -44,14 +44,10 @@ class BooksController < ApplicationController
   # DELETE /books/1
   def destroy
     @book.destroy
-    redirect_to books_url, notice: t('Book was successfully destroyed').to_s
+    redirect_to books_url, notice: t('Book was successfully destroyed')
   end
 
   private
-
-  def fetch_id
-    current_user.following.map(&:id).push(current_user.id)
-  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_book
