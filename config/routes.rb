@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'following_books/index'
   resources :reports do
@@ -17,5 +19,5 @@ Rails.application.routes.draw do
     resources :comments
   end
   root to: 'books#index'
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships, only: %i[create destroy]
 end
