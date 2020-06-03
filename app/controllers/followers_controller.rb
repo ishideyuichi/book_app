@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FollowersController < ApplicationController
   NUMBER_OF_ITEMS = 5
 

@@ -1,0 +1,24 @@
+test1:
+  name: test1
+  id: 1
+  email: yahoo1
+  uid: 1
+  provider: github
+
+test2:
+  id: 2
+  email: yahoo2
+  uid: 2
+  provider: github
+
+test3:
+  id: 3
+  email: yahoo3
+  uid: 3
+  provider: github
+
+test4:
+  id: 4
+  email: yahoo4
+  uid: 4
+  provider: github

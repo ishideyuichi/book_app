@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   NUMBER_OF_ITEMS = 5
   def index
